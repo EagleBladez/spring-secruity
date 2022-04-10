@@ -10,13 +10,13 @@ public class CustomHealthActuator implements HealthIndicator {
 	@Override
 	public Health health() {
 		if(check()) {
-			return Health.up().withDetail("Testing", "UP").build();
+			return Health.up().withDetail("checked", "UP").build();
 		}
 		return Health.down().withDetail("Error Code", 503).build();
 	}
 	
 	private boolean check() {
-		return true;
+		return false;
 	}
 
 }
